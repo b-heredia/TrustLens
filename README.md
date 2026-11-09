@@ -55,7 +55,7 @@ TrustLens/
 └── README.md
 Installation and Setup
 1. Clone the repository
-git clone YOUR_REPOSITORY_URL
+git clone https://github.com/b-heredia/TrustLens.git
 cd TrustLens
 2. Create a virtual environment
 python -m venv venv
