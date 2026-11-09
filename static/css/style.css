@@ -1,0 +1,263 @@
+/* Main webpage styling */
+body {
+    background-color: #101827;
+    color: #F8FAFC;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 40px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 42px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #94A3B8;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* URL analyzer panel */
+.analyzer {
+    background-color: #1E293B;
+    padding: 30px;
+    margin-top: 40px;
+    border-radius: 12px;
+    border: 1px solid #334155;
+}
+
+.analyzer h2 {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.analyzer p {
+    margin-bottom: 20px;
+}
+
+/* URL input */
+input {
+    width: 100%;
+    padding: 14px;
+    margin-top: 10px;
+    background-color: #101827;
+    color: #F8FAFC;
+    border: 1px solid #475569;
+    border-radius: 8px;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+/* Analyze button */
+button {
+    background-color: #64748B;
+    color: #FFFFFF;
+    padding: 14px 24px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #475569;
+}
+
+/* Error message */
+.error-message {
+    background-color: #301C24;
+    border: 1px solid #854D4D;
+    border-radius: 8px;
+    padding: 14px;
+    margin-top: 20px;
+    color: #FCA5A5;
+    line-height: 1.5;
+}
+
+/* Results section */
+.result {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #334155;
+}
+
+.result h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+/* Risk summary */
+.risk-summary {
+    background-color: #101827;
+    border: 1px solid #475569;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 25px 0;
+}
+
+.risk-summary h3 {
+    margin-top: 0;
+}
+
+.warning-count {
+    color: #F8FAFC;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* Results list */
+.result ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+}
+
+.result li {
+    border-radius: 8px;
+    padding: 14px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.warning-item {
+    background-color: #301C24;
+    border: 1px solid #854D4D;
+    color: #FCA5A5;
+}
+
+.info-item {
+    background-color: #101827;
+    border: 1px solid #334155;
+    color: #CBD5E1;
+}
+
+/* Results legend */
+.results-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 15px 0 20px;
+}
+
+.legend-warning,
+.legend-info {
+    display: inline-block;
+    padding: 7px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.legend-warning {
+    background-color: #301C24;
+    border: 1px solid #854D4D;
+    color: #FCA5A5;
+}
+
+.legend-info {
+    background-color: #101827;
+    border: 1px solid #334155;
+    color: #CBD5E1;
+}
+
+/* Risk explanation */
+.risk-explanation {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #94A3B8;
+    border-top: 1px solid #334155;
+    padding-top: 12px;
+    margin-top: 15px;
+}
+
+/* Clear Results button */
+.clear-button {
+    display: inline-block;
+    background-color: transparent;
+    color: #CBD5E1;
+    border: 1px solid #475569;
+    padding: 12px 20px;
+    margin-top: 15px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.clear-button:hover {
+    background-color: #334155;
+    color: #FFFFFF;
+}
+
+/* Disclaimer */
+.disclaimer {
+    margin-top: 30px;
+    padding: 18px;
+    background-color: #101827;
+    border: 1px solid #334155;
+    border-radius: 8px;
+}
+
+.disclaimer h3 {
+    font-size: 16px;
+    margin-top: 0;
+    color: #F8FAFC;
+}
+
+.disclaimer p {
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* How TrustLens Works */
+.how-it-works {
+    background-color: #1E293B;
+    border: 1px solid #334155;
+    border-radius: 12px;
+    padding: 30px;
+    margin-top: 30px;
+}
+
+.how-it-works h2 {
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.how-it-works h3 {
+    font-size: 17px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    color: #F8FAFC;
+}
+
+.how-it-works p {
+    color: #94A3B8;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.how-it-works ul {
+    padding-left: 22px;
+    margin-top: 15px;
+}
+
+.how-it-works li {
+    color: #CBD5E1;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 5px;
+}

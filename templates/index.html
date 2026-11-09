@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrustLens | Digital Trust Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <main class="container">
+
+        <h1>TrustLens</h1>
+        <p>Understand what is behind every link.</p>
+
+        <section class="analyzer">
+
+            <h2>Analyze a URL</h2>
+            <p>Paste a link below to examine its trust indicators.</p>
+
+            <form method="POST">
+                <input
+                    type="text"
+                    name="url"
+                    placeholder="https://example.com"
+                    value="{{ submitted_url or '' }}"
+                    required
+                >
+
+                <button type="submit">Analyze URL</button>
+            </form>
+
+            {% if error_message %}
+                <div class="error-message">
+                    {{ error_message }}
+                </div>
+            {% endif %}
+
+            {% if submitted_url and analysis_result %}
+                <div class="result">
+
+                    <h3>Submitted URL</h3>
+                    <p>{{ submitted_url }}</p>
+
+                    <div class="risk-summary">
+                        <h3>Risk Summary</h3>
+
+                        <p class="warning-count">
+                            {{ warning_count }} warning indicators detected
+                        </p>
+
+                        <p>{{ risk_summary }}</p>
+
+                        <p class="risk-explanation">
+                            This assessment is based on the number of predefined
+                            warning indicators detected. It is not a probability
+                            score and does not determine whether a website is safe
+                            or malicious.
+                        </p>
+                    </div>
+
+                    <h3>Analysis Results</h3>
+
+                    <div class="results-legend">
+                        <span class="legend-warning">Warning indicator</span>
+                        <span class="legend-info">Informational finding</span>
+                    </div>
+
+                    <ul>
+                        {% for result in analysis_result %}
+                            <li class="{% if result.startswith('Warning:') %}warning-item{% else %}info-item{% endif %}">
+                                {{ result }}
+                            </li>
+                        {% endfor %}
+                    </ul>
+
+                    <a href="/" class="clear-button">Clear Results</a>
+
+                </div>
+            {% endif %}
+
+            <div class="disclaimer">
+                <h3>Important Information</h3>
+                <p>
+                    TrustLens identifies potential warning indicators
+                    using predefined checks. Results do not guarantee
+                    that a website is safe or malicious. Always verify
+                    unfamiliar links before sharing personal information.
+                </p>
+            </div>
+
+        </section>
+
+        <section class="how-it-works">
+
+            <h2>How TrustLens Works</h2>
+
+            <p>
+                TrustLens examines URL structures using six predefined
+                checks to identify potential warning indicators.
+            </p>
+
+            <ul>
+                <li>HTTPS connection detection</li>
+                <li>IP address identification</li>
+                <li>Unusually long URL detection</li>
+                <li>Username information detection</li>
+                <li>Recognized URL shortener detection</li>
+                <li>Uncommon domain ending detection</li>
+            </ul>
+
+            <h3>Understanding the Results</h3>
+
+            <p>
+                A warning indicator does not automatically mean
+                a website is malicious. It simply identifies something
+                that may deserve closer attention.
+            </p>
+
+            <p>
+                Likewise, finding no warning indicators does not
+                guarantee that a website is safe.
+            </p>
+
+            <h3>Current Limitations</h3>
+
+            <p>
+                TrustLens currently uses predefined Python rules.
+                It does not connect to live threat intelligence databases,
+                scan website content, or verify a website's reputation.
+            </p>
+
+        </section>
+
+    </main>
+</body>
+</html>
